@@ -1,4 +1,3 @@
-// TransactionForm.jsx
 import { useState } from "react";
 
 export default function TransactionForm({ transactions = [], setTransactions }) {

@@ -1,4 +1,3 @@
-// History.jsx
 import { useState, useEffect } from "react";
 import TransactionForm from "./TransactionForm";
 import TransactionList from "./TransactionList";
