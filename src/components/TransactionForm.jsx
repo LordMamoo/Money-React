@@ -32,16 +32,20 @@ export default function TransactionForm({ transactions = [], setTransactions }) 
 
     function addTransaction(e) {
         e.preventDefault();
-
+    
         const numericAmount = parseFloat(formData.amount.replace(/[^0-9.-]+/g, ""));
         if (isNaN(numericAmount)) return;
-
+    
+        const signedAmount = formData.type === "expense"
+            ? -Math.abs(numericAmount) // always negative
+            : Math.abs(numericAmount); // always positive
+    
         const newTransaction = {
             ...formData,
-            amount: numericAmount,
+            amount: signedAmount,
             id: Date.now(),
         };
-
+    
         const updated = [...transactions, newTransaction];
         setTransactions(updated);
         setFormData({ type: "", text: "", amount: "" });
