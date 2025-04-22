@@ -25,6 +25,10 @@ export default function History() {
         }
     }, [transactions, hasLoaded]);
 
+    function deleteTransaction(id) {
+        setTransactions((prev) => prev.filter((t) => t.id !== id));
+    }
+
     const income = transactions
     .filter((t) => t.amount > 0)
     .reduce((sum, t) => sum + t.amount, 0);
@@ -34,13 +38,15 @@ export default function History() {
     .reduce((sum, t) => sum + Math.abs(t.amount), 0);
 
     return (
-        <div className="p-4">
+        <div className="flex flex-col items-center p-4">
             <Balance income={income} expense={expense} />
             <TransactionForm
                 transactions={transactions}
                 setTransactions={setTransactions}
             />
-            <TransactionList transactions={transactions} />
+            <TransactionList
+            transactions={transactions}
+            deleteTransaction={deleteTransaction} />
         </div>
     );
 }
