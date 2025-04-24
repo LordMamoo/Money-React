@@ -52,7 +52,7 @@ export default function TransactionForm({ transactions = [], setTransactions }) 
     }
 
     return (
-        <form onSubmit={addTransaction} className="flex flex-col gap-2 w-xl">
+        <form onSubmit={addTransaction} className="flex flex-col gap-2 pt-5 w-xl">
             <h2 className="text-xl font-semibold mb-2">Add New Transaction</h2>
             <select id="type" className="rounded bg-gray-100 p-2" value={formData.type} onChange={handleChange} required>
                 <option value="">Select Type</option>

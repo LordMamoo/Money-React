@@ -1,9 +1,11 @@
 import History from "./components/History.jsx";
+import Navbar from "./components/NavBar.jsx"
 
 function App() {
   return (
     <>
-      <main className='min-h-dvh w-dvw flex flex-col items-center gap-4 p-20'>
+      <main className='min-h-dvh w-auto flex flex-col items-center overflow-hidden'>
+          <Navbar />
           <History />
       </main>
     </>

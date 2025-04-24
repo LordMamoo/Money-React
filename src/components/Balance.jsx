@@ -5,7 +5,6 @@ export default function Balance({ income, expense }) {
 
     return (
         <div id="balance" className="flex flex-col justify-center items-center gap-2 p-4 bg-blue-500 rounded-lg w-2xl h-60 text-white">
-            <h1 className="text-2xl w-lg">Money Manager</h1>
             <div className="w-lg text-xl">
                 <h2>Your Balance</h2>
                 <span>${balance.toFixed(2)}</span>

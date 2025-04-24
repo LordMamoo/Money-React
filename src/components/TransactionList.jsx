@@ -4,7 +4,7 @@ export default function TransactionList({ transactions, deleteTransaction }) {
     }
 
     return (
-        <div className="mt-4 w-xl">
+        <div className="mt-4 w-xl h-40 overflow-y-scroll">
             <h2 className="text-xl font-semibold">History</h2>
             <ul className="mt-2">
                 {transactions.map((t) => (
@@ -25,4 +25,4 @@ export default function TransactionList({ transactions, deleteTransaction }) {
             </ul>
         </div>
     );
-}
+} 
